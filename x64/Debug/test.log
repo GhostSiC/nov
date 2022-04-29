@@ -1,2 +1,7 @@
-﻿  Game.cpp
-c1xx : fatal error C1083: Nie można otworzyć pliku źródło: 'Game.cpp': No such file or directory
+﻿  test.cpp
+D:\vc\nov\test\test\test.cpp(36,17): warning C4838: konwersja z „double” do „float” wymaga konwersji zawężającej
+D:\vc\nov\test\test\test.cpp(36,17): warning C4244: "inicjowanie": konwersja z "double" do "float", możliwa utrata danych
+D:\vc\nov\test\test\test.cpp(37,17): warning C4838: konwersja z „double” do „float” wymaga konwersji zawężającej
+D:\vc\nov\test\test\test.cpp(37,17): warning C4244: "inicjowanie": konwersja z "double" do "float", możliwa utrata danych
+D:\vc\nov\test\test\test.cpp(47,21): warning C4244: "inicjowanie": konwersja z "int" do "float", możliwa utrata danych
+  test.vcxproj -> D:\vc\nov\test\x64\Debug\test.exe

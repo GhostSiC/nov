@@ -21,66 +21,43 @@ float vectorDotProduct(vec2 pt1, vec2 pt2)
 
 bool isColliding(const triangle& triangle1, const triangle& triangle2) {
 
-    /*
-    for (auto i = 0u; i < triangle1.points.size() + 0; ++i) {
-        // calculate the normal vector of the current edge
-        // this is the axis will we check in this loop
-        auto current = triangle1.points.at(i);
-        auto next = triangle1.points.at((i + 1) % triangle1.points.size());
-        vec2 edge;
-        edge.x = next.x - current.x;
-        edge.y = next.y - current.y;
 
-        vec2 axis{};
-        axis.x = -edge.y;
-        axis.y = edge.x;
+    for (int i = 0; i < triangle1.points.size(); i++) {
 
-        std::cout << "axis.x:" << axis.x << '\n';
-        std::cout << "axis.y:" << axis.y << '\n';
+        
+
+        vec2 axis{
+            -(triangle1.points.at(i).y - triangle1.points.at((i+1) % triangle1.points.size()).y),
+            triangle1.points.at(i).x - triangle1.points.at((i + 1) % triangle1.points.size()).x
+        };
 
 
-        auto aMaxProj = -std::numeric_limits<float>::infinity();
-        auto aMinProj = std::numeric_limits<float>::infinity();
-        auto bMaxProj = -std::numeric_limits<float>::infinity();
-        auto bMinProj = std::numeric_limits<float>::infinity();
+        vec2 magnitude{
+            sqrt(pow(axis.x, 2)),
+            sqrt(pow(axis.y, 2))
+        };
 
-        for (const auto& v : triangle1.points) {
-            auto proj = nytl::vec::dot(axis, v);
-            if (proj < aMinProj) aMinProj = proj;
-            if (proj > aMaxProj) aMaxProj = proj;
+        if (magnitude.x != 0 && magnitude.y != 0)
+        {
+            axis.x *= 1 / magnitude.x;
+            axis.y *= 1 / magnitude.y;
         }
 
-        for (const auto& v : b) {
-            auto proj = nytl::vec::dot(axis, v);
-            if (proj < bMinProj) bMinProj = proj;
-            if (proj > bMaxProj) bMaxProj = proj;
-        }
+        float p1min = vectorDotProduct(axis, triangle1.points.at(i));
+        float p1max = std::numeric_limits<int>::min();
+
+
+        vec2 dot = triangle1.points.at(i);
+        p1min = std::min(p1min, dot.x);
+        p1max = std::max(p1max, dot.y);
+        
+
+        std::cout << axis.x << '\n';
+        std::cout << axis.y << '\n';
+        
+        std::cout << p1min << '\n';
+        std::cout << p1max << '\n';
     }
-    */
-
-
-
-
-    vec2 axis{
-        -(triangle1.points.at(1).y - triangle1.points.at(2).y),
-        triangle1.points.at(1).x - triangle1.points.at(2).x
-    };
-
-
-    vec2 magnitude{
-        sqrt(pow(axis.x, 2)),
-        sqrt(pow(axis.y, 2))
-    };
-
-    if (magnitude.x != 0 && magnitude.y != 0)
-    {
-        axis.x *= 1 / magnitude.x;
-        axis.y *= 1 / magnitude.y;
-    }
-
-    std::cout << axis.x << '\n';
-    std::cout << axis.y << '\n';
-
     return 0;
 }
 
