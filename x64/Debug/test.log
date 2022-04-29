@@ -1,7 +1,2 @@
-﻿  test.cpp
-D:\vc\nov\test\test\test.cpp(69,13): warning C4838: konwersja z „double” do „float” wymaga konwersji zawężającej
-D:\vc\nov\test\test\test.cpp(69,13): warning C4244: "inicjowanie": konwersja z "double" do "float", możliwa utrata danych
-D:\vc\nov\test\test\test.cpp(70,13): warning C4838: konwersja z „double” do „float” wymaga konwersji zawężającej
-D:\vc\nov\test\test\test.cpp(70,13): warning C4244: "inicjowanie": konwersja z "double" do "float", możliwa utrata danych
-D:\vc\nov\test\test\test.cpp(99,5): warning C4267: "inicjowanie": konwersja z "size_t" do "int", możliwa utrata danych
-  test.vcxproj -> D:\vc\nov\test\x64\Debug\test.exe
+﻿  Game.cpp
+c1xx : fatal error C1083: Nie można otworzyć pliku źródło: 'Game.cpp': No such file or directory
